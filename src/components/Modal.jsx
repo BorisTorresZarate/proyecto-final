@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
-import { WeatherContext } from '../hooks/WeatherContent';
+
+import { useContext } from 'react';
+import { WeatherContext } from '../hooks/WeatherContext';
 
 export function Modal({ isModalOpen, toggleModal, location, setLocation }) {
   const { fetchWeatherByCity } = useContext(WeatherContext); 
