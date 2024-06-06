@@ -21,7 +21,6 @@ export function StateCF() {
                 <button className={`text-white text-[18px] w-[40px] h-[40px] rounded-full bg-[#585676] border-none hover:bg-[#4d4c5f] ${unit === 'F' ? 'bg-blue-500' : 'bg-gray-700'}`} onClick={() => setUnit('F')} >°F</button>
             </div>
 
-
             <div className='flex flex-wrap gap-5 pt-8 justify-center lg:justify-start '>
                 {
                     dailyForecasts.slice(0, 5).map((forecast, index) => (
@@ -37,7 +36,6 @@ export function StateCF() {
                         </div>
                     ))
                 }
-                
             </div>
         </>
     )
