@@ -3,12 +3,11 @@ import { WeatherContext } from "../hooks/WeatherContext";
 
 export function StateCF() {
     const { weatherData, loading, error } = useContext(WeatherContext);
-    const [unit, setUnit] = useState('C'); // Estado para manejar unidades
+    const [unit, setUnit] = useState('C'); 
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error}</div>;
+    if (loading) return <div className="text-white">Loading...</div>;
+    if (error) return <div className="text-white">Error: {error}</div>;
 
-    /* Para obtener pronóstico diario */
     const dailyForecasts = weatherData.list.filter(forecast => forecast.dt_txt.includes("12:00:00"));
 
     const convertTemperature = (temp) => {

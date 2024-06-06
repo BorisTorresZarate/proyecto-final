@@ -4,8 +4,8 @@ import { WeatherContext } from "../hooks/WeatherContext";
 export function Box() {
     const { weatherData, loading, error } = useContext(WeatherContext);
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error}</div>;
+    if (loading) return <div className="text-white">Loading...</div>;
+    if (error) return <div className="text-white">Error: {error}</div>;
 
     const currentWeather = weatherData.list[0];
 

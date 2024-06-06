@@ -23,8 +23,6 @@ export function Left({ weatherData, toggleModal }) {
       const temperatureInCelsius = kelvinToCelsius(temperature);
       setCurrentTemperature(temperatureInCelsius.toFixed(2));
       setCurrentWeatherDescription(weatherDescription);
-
-      // Actualizar la fecha actual
       setCurrentDate(getCurrentDate());
     };
 
@@ -38,15 +36,12 @@ export function Left({ weatherData, toggleModal }) {
       return date.toLocaleDateString('en-US', options);
     };
 
-    // Llamar a la función de actualización del clima cuando se monte el componente
     updateWeather();
 
-    // Configurar un temporizador para que se actualice cada 3 horas
     const interval = setInterval(() => {
       updateWeather();
-    }, 3 * 60 * 60 * 1000); // 3 horas en milisegundos
+    }, 3 * 60 * 60 * 1000); 
 
-    // Limpiar el temporizador cuando el componente se desmonte para evitar fugas de memoria
     return () => clearInterval(interval);
   }, [weatherData]);
   return (

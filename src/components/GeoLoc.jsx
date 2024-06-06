@@ -24,7 +24,7 @@ export function GeoLoc() {
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(success, error, options);
-  }, []); // Solo se ejecutará una vez al cargar el componente
+  }, []);
 
   useEffect(() => {
     if ("latitude" in geolocation) {
